@@ -1,0 +1,22 @@
+table,
+td,
+th {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 2px 10px;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  border: 1px solid black;
+}
+
+.container div {
+  flex: 1 1 auto;
+}
+
+.winner {
+  font-weight: bold;
+}

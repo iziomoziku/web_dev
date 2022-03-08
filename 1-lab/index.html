@@ -49,7 +49,7 @@
     <div>
       <p id="demo"></p>
     </div>
-    <button type="button" onclick="loadDoc()">Change Content</button>
+    <button type="button" onclick="loadDoc()">New Content</button>
 
     <div>
       <h1>Hello welcome to my page, my name is Izi Omoziku</h1>
@@ -306,7 +306,8 @@
         let xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function () {
           if (this.readyState == 4 && this.status == 200) {
-            document.getElementById("demo").innerHTML = this.responseText;
+            // document.getElementById("demo").innerHTML = this.responseText;
+            console.log(this.responseText);
           }
         };
         xhttp.open("GET", "data.txt", true);

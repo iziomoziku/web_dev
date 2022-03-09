@@ -49,8 +49,8 @@
     <div>
       <p id="demo"></p>
     </div>
-    <!-- <button type="button" onclick="loadDoc()">New Content</button> -->
-    <button type="button" id="btn">New</button>
+    <button type="button" onclick="loadDoc()">New Content</button>
+    <!-- <button type="button" id="btn">New</button> -->
 
     <div>
       <h1>Hello welcome to my page, my name is Izi Omoziku</h1>
@@ -303,29 +303,29 @@
 
     <!-- <script src="main.js"></script> -->
     <script>
-      // function loadDoc() {
-      //   let xhttp = new XMLHttpRequest();
-      //   xhttp.onreadystatechange = function () {
-      //     if (this.readyState == 4 && this.status == 200) {
-      //       // document.getElementById("demo").innerHTML = this.responseText;
-      //       console.log(this.responseText);
-      //     }
-      //   };
-      //   xhttp.open("GET", "data.txt", true);
-      //   xhttp.send();
-      // }
+      function loadDoc() {
+        let xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+          if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("demo").innerHTML = this.responseText;
+            console.log(this.responseText);
+          }
+        };
+        xhttp.open("GET", "data.txt", true);
+        xhttp.send();
+      }
 
-      $("#btn").click(function () {
-        $("#demo").load("data.txt", function (responseTxt, statusTxt, xhr) {
-          if (statusTxt == "success") {
-            alert("External content loaded successfully!");
-          }
-          if (statusTxt == "error") {
-            alert("Error: " + xhr.status + ": " + xhr.statusText);
-          }
-          console.log(xhr);
-        });
-      });
+      // $("#btn").click(function () {
+      //   $("#demo").load("data.txt", function (responseTxt, statusTxt, xhr) {
+      //     if (statusTxt == "success") {
+      //       alert("External content loaded successfully!");
+      //     }
+      //     if (statusTxt == "error") {
+      //       alert("Error: " + xhr.status + ": " + xhr.statusText);
+      //     }
+      //     console.log(xhr);
+      //   });
+      // });
     </script>
   </body>
 </html>

@@ -1,31 +1,21 @@
 [
   {
-    "src": "img/cameroon.png",
-    "title": "Champion"
+    "src": "img/senegal.jpeg",
+    "title": "First Place team. Champion"
   },
 
   {
     "src": "img/egypt.webp",
-    "title": "Second Place"
+    "title": "Second Place team"
   },
 
   {
-    "src": "img/senegal.jpeg",
+    "src": "img/cameroon.png",
     "title": "Third Place"
   },
 
   {
-    "src": "img/cameroon.png",
-    "title": "Fourth Place"
-  },
-
-  {
-    "src": "img/egypt.webp",
-    "title": "Fifth Place"
-  },
-
-  {
-    "src": "img/senegal.jpeg",
-    "title": "Sixth Place"
+    "src": "img/nigeria.webp",
+    "title": "First Place in their group"
   }
 ]

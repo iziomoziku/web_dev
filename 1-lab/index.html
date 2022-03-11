@@ -306,18 +306,10 @@
     <script>
       container = document.querySelector("#image_container");
       let xhttp = new XMLHttpRequest();
-      // response =
-      //   '[{ "src": "img/cameroon.png", "title": "Champion" }, \
-      //   { "src": "img/senegal.jpeg", "title": "Second Place" }]';
       counter = 0;
-
-      // function loadDoc(counter) {
-      // let xhttp = new XMLHttpRequest();
 
       xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-          // document.getElementById("demo").innerHTML = this.responseText;
-          // response = this.responseText;
           let response = JSON.parse(this.responseText);
 
           setInterval(function () {
@@ -327,28 +319,18 @@
             } else {
               counter++;
             }
-          }, 1000);
+          }, 20000);
         }
       };
       // }
       xhttp.open("GET", "data.json", true);
       xhttp.send();
 
-      // setInterval(function () {
-      //   loadDoc(counter, response);
-      //   if (counter === response.length - 1) {
-      //     counter = 0;
-      //   } else {
-      //     counter++;
-      //   }
-      // }, 1000);
-
       function loadDoc(counter, response) {
         while (container.firstChild) {
           container.removeChild(container.firstChild);
         }
 
-        // let response = JSON.parse(imagesJSON);
         let source = response[counter].src;
         let image_caption = response[counter].title;
         let img = document.createElement("img");

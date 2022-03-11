@@ -1,10 +1,5 @@
 [
   {
-    "src": "img/senegal.jpeg",
-    "title": "First Place team. Champion"
-  },
-
-  {
     "src": "img/egypt.webp",
     "title": "Second Place team"
   },
@@ -17,5 +12,10 @@
   {
     "src": "img/nigeria.webp",
     "title": "First Place in their group"
+  },
+
+  {
+    "src": "img/senegal.jpeg",
+    "title": "First Place team. Champion"
   }
 ]

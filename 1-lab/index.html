@@ -16,6 +16,12 @@
       crossorigin="anonymous"
     />
 
+    <style>
+      img {
+        width: 100%;
+      }
+    </style>
+
     <!-- <link rel="stylesheet" href="style.css" /> -->
   </head>
   <body>
@@ -47,10 +53,10 @@
     </nav>
 
     <div id="image_container">
-      <!-- <img id="image" src="#" /> -->
-      <!-- <p id="demo"></p> -->
+      <img id="image" src="img/cameroon.png" />
+      <p id="demo">First Place Team</p>
     </div>
-    <button type="button" onclick="loadDoc()">New Content</button>
+    <!-- <button type="button" onclick="loadDoc()">New Content</button> -->
     <!-- <button type="button" id="btn">New</button> -->
 
     <div>
@@ -305,6 +311,8 @@
     <!-- <script src="main.js"></script> -->
     <script>
       container = document.querySelector("#image_container");
+      img = document.querySelector("#image");
+      para = document.querySelector("#demo");
       let xhttp = new XMLHttpRequest();
       counter = 0;
 
@@ -319,7 +327,7 @@
             } else {
               counter++;
             }
-          }, 20000);
+          }, 5000);
         }
       };
       // }
@@ -327,18 +335,19 @@
       xhttp.send();
 
       function loadDoc(counter, response) {
-        while (container.firstChild) {
-          container.removeChild(container.firstChild);
-        }
+        // while (container.firstChild) {
+        //   container.removeChild(container.firstChild);
+        // }
 
         let source = response[counter].src;
         let image_caption = response[counter].title;
-        let img = document.createElement("img");
-        let para = document.createElement("p");
+        // let img = document.createElement("img");
+        // let para = document.createElement("p");
+        para.innerHTML = " ";
         para.innerHTML = image_caption;
         img.src = source;
-        container.appendChild(img);
-        container.appendChild(para);
+        // container.appendChild(img);
+        // container.appendChild(para);
       }
     </script>
   </body>

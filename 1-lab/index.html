@@ -46,8 +46,9 @@
       </div>
     </nav>
 
-    <div>
-      <p id="demo"></p>
+    <div id="image_container">
+      <!-- <img id="image" src="#" /> -->
+      <!-- <p id="demo"></p> -->
     </div>
     <button type="button" onclick="loadDoc()">New Content</button>
     <!-- <button type="button" id="btn">New</button> -->
@@ -303,29 +304,49 @@
 
     <!-- <script src="main.js"></script> -->
     <script>
-      function loadDoc() {
-        let xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function () {
-          if (this.readyState == 4 && this.status == 200) {
-            document.getElementById("demo").innerHTML = this.responseText;
-            console.log(this.responseText);
-          }
-        };
-        xhttp.open("GET", "data.txt", true);
-        xhttp.send();
-      }
+      // container = document.querySelector("#image_container");
+      let xhttp = new XMLHttpRequest();
+      // imagesJSON =
+      //   '[{ "src": "img/cameroon.png", "title": "Champion" }, \
+      //   { "src": "img/senegal.jpeg", "title": "Second Place" }]';
+      counter = 0;
 
-      // $("#btn").click(function () {
-      //   $("#demo").load("data.txt", function (responseTxt, statusTxt, xhr) {
-      //     if (statusTxt == "success") {
-      //       alert("External content loaded successfully!");
-      //     }
-      //     if (statusTxt == "error") {
-      //       alert("Error: " + xhr.status + ": " + xhr.statusText);
-      //     }
-      //     console.log(xhr);
-      //   });
-      // });
+      // function loadDoc(counter) {
+      // let xhttp = new XMLHttpRequest();
+
+      xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          // document.getElementById("demo").innerHTML = this.responseText;
+          response = this.responseText;
+          setInterval(function () {
+            loadDoc(counter, response);
+            if (counter === response.length - 1) {
+              counter = 0;
+            } else {
+              counter++;
+            }
+          }, 1000);
+        }
+      };
+      // }
+      xhttp.open("GET", "data.txt", true);
+      xhttp.send();
+
+      function loadDoc(counter, response) {
+        while (container.firstChild) {
+          container.removeChild(container.firstChild);
+        }
+
+        // let response = JSON.parse(imagesJSON);
+        let source = response[counter].src;
+        let image_caption = response[counter].title;
+        let img = document.createElement("img");
+        let para = document.createElement("p");
+        para.innerHTML = image_caption;
+        img.src = source;
+        container.appendChild(img);
+        container.appendChild(para);
+      }
     </script>
   </body>
 </html>

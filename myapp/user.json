@@ -1,0 +1,11 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "apikey": "an0qrr5i9u0q4km27hv2hue3ywx3uu",
+      "email": "looking@yahoo.com",
+      "password": "goodlooking",
+      "usage": [{ "date": "2020-05-08", "count": 17 }]
+    }
+  ]
+}
